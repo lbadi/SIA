@@ -1,5 +1,7 @@
 package gps.fillZones;
 
+import java.util.Arrays;
+
 import gps.api.GPSState;
 
 public class FillZoneState implements GPSState{
@@ -8,6 +10,9 @@ public class FillZoneState implements GPSState{
 	public static int countRow = 11;
 	public static int countCol = 11;
 	public static int countColors = 6;
+	public int maxI[] = {0,0};
+	public int maxJ[] = {0,0};
+	public int maxIJ[] = {0,0};
 	public byte[][] board = new byte[countRow][countCol];
 	
 	public FillZoneState(int movesLeft){
@@ -32,6 +37,9 @@ public class FillZoneState implements GPSState{
 				state.board[i][j] = board[i][j];
 			}
 		}
+		state.maxI = Arrays.copyOf(maxI, maxI.length);
+		state.maxJ = Arrays.copyOf(maxJ, maxJ.length);
+		state.maxIJ = Arrays.copyOf(maxIJ, maxIJ.length);
 		return state;
 	}
 	

@@ -1,10 +1,9 @@
 package gps.fillZones;
 
-import java.util.LinkedList;
-
 import gps.GPSEngine;
 import gps.GPSNode;
-import gps.SearchStrategy;
+
+import java.util.LinkedList;
 
 public class FillZoneEngine extends GPSEngine{
 
@@ -27,43 +26,45 @@ public class FillZoneEngine extends GPSEngine{
 	public void addNode(GPSNode node) {
 		switch( this.getStrategy()){
 			case DFS:{
-				addDFS(node);
+				add(node);
 			}
 			case BFS:{
-				addBFS(node);
+				add(node);
 			}
 			case ITERATIVE:{
 				addIterative(node);
 			}
 			case AStar:{
-				
+				addAStar(node);
 			}
 			case GREEDY:{
-				
+				addGreedy(node);
 			}
 			default: {
-				addDFS(node);
+				add(node);
 			}
 		}
 		System.out.println(node.getState());
 		
 	}
-	
-	private void addDFS(GPSNode node){
-		((LinkedList<GPSNode>)this.open).addFirst(node);
+	private void addAStar(GPSNode node){
+		node.setValue(problem.getHValue(node.getState()));
 	}
-	private void addBFS(GPSNode node){
-		(this.open).add(node);
+	private void addGreedy(GPSNode node){
+		node.setValue(problem.getHValue(node.getState()) + node.getCost());
+	}
+	private void add(GPSNode node){
+		this.open.add(node);
 	}
 	private void addIterative(GPSNode node){
 		int step = calculateHeight(node);
 		if(step < maxStep){
-			addDFS(node);
+			add(node);
 		}
 		if(open.isEmpty()){
 			maxStep++;
 			GPSNode rootNode = new GPSNode(problem.getInitState(), 0);
-			addDFS(rootNode);
+			add(rootNode);
 			
 		}
 	}

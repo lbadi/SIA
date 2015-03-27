@@ -6,7 +6,7 @@ public class Execute {
 
 	public static void main(String[] args) {
 		FillZoneEngine engine = new FillZoneEngine();
-		engine.engine(new FillZoneProblem(), SearchStrategy.DFS);
+		engine.engine(new FillZoneProblem(), SearchStrategy.GREEDY);
 	}
 
 }
