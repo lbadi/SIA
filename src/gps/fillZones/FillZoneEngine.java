@@ -48,10 +48,10 @@ public class FillZoneEngine extends GPSEngine{
 		
 	}
 	private void addAStar(GPSNode node){
-		node.setValue(problem.getHValue(node.getState()));
+		node.setValue(problem.getHValue(node.getState()) + node.getCost());
 	}
 	private void addGreedy(GPSNode node){
-		node.setValue(problem.getHValue(node.getState()) + node.getCost());
+		node.setValue(problem.getHValue(node.getState()));
 	}
 	private void add(GPSNode node){
 		this.open.add(node);

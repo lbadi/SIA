@@ -7,8 +7,8 @@ import gps.api.GPSState;
 public class FillZoneState implements GPSState{
 
 	public int movesLeft;
-	public static int countRow = 14;
-	public static int countCol = 14;
+	public static int countRow = 11;
+	public static int countCol = 11;
 	public static int countColors = 6;
 	public int maxI[] = {0,0};
 	public int maxJ[] = {0,0};
@@ -53,7 +53,7 @@ public class FillZoneState implements GPSState{
 			}
 			s += "\n";
 		}
-		s += "\n -------------------------- \n";
+		s += "\n -------------------------- \n" + "    " +  "COSTO:" + movesLeft;
 		return s;
 	}
 

@@ -17,7 +17,6 @@ public abstract class GPSEngine {
 
 	public Queue<GPSNode> open;
 	public List<GPSNode> closed = new ArrayList<GPSNode>();
-	public PriorityQueue<GPSNode> lastExploded = new PriorityQueue<GPSNode>();
 
 	protected GPSProblem problem;
 
@@ -25,7 +24,6 @@ public abstract class GPSEngine {
 	private SearchStrategy strategy;
 
 	public void engine(GPSProblem myProblem, SearchStrategy myStrategy) {
-
 		problem = myProblem;
 		strategy = myStrategy;
 
@@ -44,7 +42,7 @@ public abstract class GPSEngine {
 				open.remove(0);
 				if (isGoal(currentNode)) {
 					finished = true;
-					System.out.println(currentNode.getSolution());
+//					System.out.println(currentNode.getSolution());
 					System.out.println("Expanded nodes: " + explosionCounter);
 				} else {
 					explosionCounter++;
@@ -93,7 +91,6 @@ public abstract class GPSEngine {
 			System.err.println("No rules!");
 			return false;
 		}
-		lastExploded.clear();
 		for (GPSRule rule : problem.getRules()) {
 			GPSState newState = null;
 			newState = rule.evalRule(node.getState());
