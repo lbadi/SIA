@@ -1,11 +1,7 @@
 package gps.fillZones;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
-
-import gps.SearchStrategy;
 import gps.api.GPSRule;
 import gps.api.GPSState;
-import gps.exception.NotAppliableException;
 
 public class FillZoneRule implements GPSRule {
 

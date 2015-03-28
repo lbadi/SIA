@@ -10,7 +10,7 @@ public class GPSNode{
 
 	private Integer cost;
 	
-	private Integer value;
+	private Integer hValue;
 
 	public GPSNode(GPSState state, Integer cost) {
 		super();
@@ -46,11 +46,11 @@ public class GPSNode{
 		return this.parent.getSolution() + "\n" + this.state;
 	}
 	
-	public void setValue(Integer hValue){
-		this.value = hValue;
+	public void setHValue(Integer hValue){
+		this.hValue = hValue;
 	}
-	public Integer getValue(){
-		return value;
+	public Integer getHValue(){
+		return hValue;
 	}
 
 }

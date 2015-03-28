@@ -38,7 +38,6 @@ public class DistanceHeuristicAdmissible implements Heuristic {
 		while (distance > 0) {
 			distance -= colorDistance.poll();
 			steps++;
-
 		}
 		return steps == 0 ? 1 : steps;
 	}

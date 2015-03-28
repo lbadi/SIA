@@ -21,7 +21,7 @@ public class FillZoneProblem implements GPSProblem{
 	
 	@Override
 	public GPSState getInitState() {
-		FillZoneState state = new FillZoneState(50);
+		FillZoneState state = new FillZoneState(20);
 		Random randomGenerator = new Random();
 		for(int i = 0; i<FillZoneState.countRow ; i++){
 			for(int j = 0; j< FillZoneState.countCol; j++){
@@ -50,6 +50,5 @@ public class FillZoneProblem implements GPSProblem{
 	public Integer getHValue(GPSState state) {
 		return heuristic != null ? heuristic.getHValue((FillZoneState)state) : 0;
 	}
-
 
 }
