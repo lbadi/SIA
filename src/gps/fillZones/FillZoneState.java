@@ -9,7 +9,7 @@ public class FillZoneState implements GPSState{
 	public int movesLeft;
 	public static int countRow = 8;
 	public static int countCol = 8;
-	public static int countColors = 6;
+	public static byte countColors = 6;
 	public int maxI[] = {0,0};
 	public int maxJ[] = {0,0};
 	public int maxIJ[] = {0,0};
