@@ -50,6 +50,7 @@ public class FillZoneRule implements GPSRule {
 			state.maxIJ[1] = j;
 		}
 		state.board[i][j] = nextColor;
+		state.blocksPainted++;
 		if (i > 0) {
 			if (state.board[i - 1][j] == prevColor) {
 				paint(nextColor, prevColor, state, i - 1, j);

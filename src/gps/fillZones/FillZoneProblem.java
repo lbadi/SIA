@@ -37,7 +37,7 @@ public class FillZoneProblem implements GPSProblem {
 
 	@Override
 	public GPSState getInitState() {
-		FillZoneState state = new FillZoneState(1000);
+		FillZoneState state = new FillZoneState(30);
 		Random randomGenerator = new Random();
 		for (int i = 0; i < FillZoneState.countRow; i++) {
 			for (int j = 0; j < FillZoneState.countCol; j++) {

@@ -22,6 +22,4 @@ public class DistanceHeuristic implements Heuristic {
 		int distance = finalI - i + finalJ - j;
 		return distance;
 	}
-
-	
 }

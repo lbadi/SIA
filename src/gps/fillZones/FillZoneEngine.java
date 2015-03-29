@@ -48,7 +48,7 @@ public class FillZoneEngine extends GPSEngine{
 				add(node);
 			}
 		}
-		System.out.println(node.getState());
+//		System.out.println(node.getState());
 	}
 	
 	private void addHeuristic(GPSNode node){

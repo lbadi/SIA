@@ -7,13 +7,14 @@ import gps.api.GPSState;
 public class FillZoneState implements GPSState{
 
 	public int movesLeft;
-	public static int countRow = 8;
-	public static int countCol = 8;
+	public static int countRow = 14;
+	public static int countCol = 14;
 	public static byte countColors = 6;
 	public int maxI[] = {0,0};
 	public int maxJ[] = {0,0};
 	public int maxIJ[] = {0,0};
 	public byte[][] board = new byte[countRow][countCol];
+	public int blocksPainted = 0;
 	
 	public FillZoneState(int movesLeft){
 		this.movesLeft = movesLeft;
@@ -53,7 +54,7 @@ public class FillZoneState implements GPSState{
 			}
 			s += "\n";
 		}
-		s += "\n -------------------------- \n" + "    " +  "COSTO:" + movesLeft;
+		s += "\n -------------------------- \n" + "    " +  "Movimientos Restantes:" + movesLeft;
 		return s;
 	}
 
