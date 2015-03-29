@@ -22,6 +22,7 @@ public class FillZoneEngine extends GPSEngine{
 	}
 	@Override
 	public void addNode(GPSNode node) {
+		generatedStates++;
 		switch( this.getStrategy()){
 			case DFS:{
 				add(node);

@@ -3,7 +3,6 @@ package gps;
 import gps.api.GPSProblem;
 import gps.api.GPSRule;
 import gps.api.GPSState;
-import gps.exception.NotAppliableException;
 import gps.fillZones.AStartComparator;
 import gps.fillZones.GreedyComparator;
 
@@ -23,7 +22,9 @@ public abstract class GPSEngine {
 
 	// Use this variable in the addNode implementation
 	private SearchStrategy strategy;
-
+	protected long generatedStates = 0;
+	private long explosionCounter = 0;
+	
 	public void engine(GPSProblem myProblem, SearchStrategy myStrategy) {
 		long elapsedTime = System.currentTimeMillis();
 		problem = myProblem;
@@ -32,7 +33,6 @@ public abstract class GPSEngine {
 		GPSNode rootNode = new GPSNode(problem.getInitState(), 0);
 		boolean finished = false;
 		boolean failed = false;
-		long explosionCounter = 0;
 		createList(myStrategy);
 		open.add(rootNode);
 		while (!failed && !finished) {
@@ -44,8 +44,7 @@ public abstract class GPSEngine {
 				open.remove(0);
 				if (isGoal(currentNode)) {
 					finished = true;
-//					System.out.println(currentNode.getSolution());
-					System.out.println("Expanded nodes: " + explosionCounter);
+					printResult(currentNode);
 				} else {
 					explosionCounter++;
 					explode(currentNode);
@@ -145,6 +144,14 @@ public abstract class GPSEngine {
 
 	public SearchStrategy getStrategy() {
 		return strategy;
+	}
+	
+	private void printResult(GPSNode node){
+		System.out.println(node.getSolution());
+		System.out.println("Cost: " + node.getCost());
+		System.out.println("Expanded nodes: " + explosionCounter);
+		System.out.println("Generated states: " + generatedStates);
+		System.out.println("Frontier: " + open.size());
 	}
 
 	public abstract void addNode(GPSNode node);
