@@ -1,11 +1,14 @@
 package gps.fillZones;
 
+import java.util.ArrayList;
+
 import gps.GPSEngine;
 import gps.GPSNode;
 
 public class FillZoneEngine extends GPSEngine{
 
 	private int maxStep = 1;
+	private boolean ignore = false;
 	
 	@Override
 	public boolean isGoal(GPSNode node){
@@ -68,11 +71,21 @@ public class FillZoneEngine extends GPSEngine{
 		this.open.add(node);
 	}
 	private void addIterative(GPSNode node){
+		if(node.getCost() < maxStep){
+			ignore = false;
+		}
+		if(ignore){
+			return;
+		}
 		int step = calculateHeight(node);
-		if(step < maxStep){
+		if(step <= maxStep){
 			add(node);
+		}else{
+			closed.clear();
 		}
 		if(open.isEmpty()){
+			ignore = true;
+			closed.clear();
 			maxStep++;
 			GPSNode rootNode = new GPSNode(problem.getInitState(), 0);
 			add(rootNode);
