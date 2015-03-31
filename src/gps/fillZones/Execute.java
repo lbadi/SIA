@@ -12,6 +12,9 @@ public class Execute {
 		// Quinto argumento: la cantidad de movimientos
 		// Sexto argumento: Si grafica los pasos intermedios.
 		Arguments arguments = parseArguments(args);
+		if(arguments == null){
+			return;
+		}
 		System.out.println("HEURISTICA: " + arguments.heuristic);
 		System.out.println("STRATEGY: " + arguments.strategy);
 		System.out.println("COLS : " + arguments.cols);
@@ -36,7 +39,7 @@ public class Execute {
 		Arguments arguments = new Arguments();
 		if (args.length < 2) {
 			System.err.println("Cantidad de argumentos invalida");
-			return arguments;
+			return null;
 		} else {
 			arguments.strategy = SearchStrategy.valueOf(args[0]);
 			arguments.heuristic = HeuristicNames.getHeuristic(args[1]);

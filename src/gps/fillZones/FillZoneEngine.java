@@ -1,7 +1,5 @@
 package gps.fillZones;
 
-import java.util.ArrayList;
-
 import gps.GPSEngine;
 import gps.GPSNode;
 
