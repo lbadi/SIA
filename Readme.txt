@@ -13,8 +13,8 @@ par2(Necesario, String) : Heuristica a utilizar. Si no es una estrategia que nec
 	-DHA
 	-DHAC
 	-CB
-par3(Opcional, Integer) : Cantidad de filas. Por default toma 6.
-par4(Opcional, Integer) : Cantidad de columnas. Por default toma 6.
+par3(Opcional, Integer) : Cantidad de filas. Por default toma 8.
+par4(Opcional, Integer) : Cantidad de columnas. Por default toma 8.
 par5(Opcional, Integer) : Cantidad de movimientos. Por default toma 30.
 par6(Opcional, Boolean) : True si tiene que imprimir cada nodo explotado.
 par7(Opcional, Boolean) : True si se quiere una representación con colores.
