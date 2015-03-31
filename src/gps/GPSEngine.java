@@ -41,7 +41,6 @@ public abstract class GPSEngine {
 			} else {
 				GPSNode currentNode = open.poll();
 				closed.add(currentNode);
-//				open.remove(0);
 				if (isGoal(currentNode)) {
 					finished = true;
 					printResult(currentNode);

@@ -26,9 +26,24 @@ public class DistanceHeuristicAdmissible implements Heuristic {
 				FillZoneState.countRow - 1, FillZoneState.countCol - 1, state);
 		int maxValue = Math.max(Math.max(minJ, minI), minIJ);
 		if(maxValue > state.movesLeft){
-			return Integer.MAX_VALUE;
+		return Integer.MAX_VALUE;
+		}
+		if(maxValue == 1){
+			return checkGoal(state) ? 0 : 1;
 		}
 		return maxValue;
+	}
+	
+	private boolean checkGoal(FillZoneState state){
+		byte firstColor = state.board[0][0];
+		for(int i = 0; i < FillZoneState.countRow ; i++){
+			for(int j=0; j< FillZoneState.countCol ; j++){
+				if(firstColor != state.board[i][j]){
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	private int getMinimunDistance(int i, int j, int finalI, int finalJ, FillZoneState state) {

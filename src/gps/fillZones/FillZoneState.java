@@ -10,6 +10,7 @@ public class FillZoneState implements GPSState{
 	public static int countRow = 6;
 	public static int countCol = 6;
 	public static byte countColors = 6;
+	public static boolean color = false;
 	public int maxI[] = {0,0};
 	public int maxJ[] = {0,0};
 	public int maxIJ[] = {0,0};
@@ -48,9 +49,12 @@ public class FillZoneState implements GPSState{
 		String s = "";
 		for(int i = 0 ; i< countRow; i++){
 			for(int j=0 ; j< countCol; j++){
-				s +=board[i][j] + " ";
-				//DESCOMENTAR PARA RELEASE EN CONSOLA QUE SE VEAN LOS COLORES
-//				s += (char)27 + "[3" + board[i][j] + ";" + "3" + + board[i][j] + "m" + board[i][j];
+				if(color){
+				s += (char)27 + "[3" + board[i][j] + ";" + "3" + + board[i][j] + "m" + board[i][j];
+					
+				}else{
+					s +=board[i][j] + " ";
+				}
 			}
 			s += "\n";
 		}

@@ -5,8 +5,6 @@ import gps.SearchStrategy;
 public class Execute {
 
 	public static void main(String[] args) {
-		// Todo hacer que dependiendo los argumentos cambie la estrategia y la
-		// heuristica.
 		// Primer argumento : el algoritmo
 		// Segundo argumento : la heuristica.
 		// Tercer argumento: la cantidad de filas
@@ -14,15 +12,24 @@ public class Execute {
 		// Quinto argumento: la cantidad de movimientos
 		// Sexto argumento: Si grafica los pasos intermedios.
 		Arguments arguments = parseArguments(args);
-		FillZoneEngine engine = new FillZoneEngine();
-		engine.engine(new FillZoneProblem(new DistanceHeuristic()),
-				SearchStrategy.ITERATIVE);
 		System.out.println("HEURISTICA: " + arguments.heuristic);
 		System.out.println("STRATEGY: " + arguments.strategy);
 		System.out.println("COLS : " + arguments.cols);
 		System.out.println("ROWS : " + arguments.rows);
 		System.out.println("Moves Left: " + arguments.moves);
 		System.out.println("GRAPH:" + arguments.graphic);
+		setArguments(arguments);
+		FillZoneEngine engine = new FillZoneEngine();
+		engine.engine(new FillZoneProblem(arguments.heuristic),
+				arguments.strategy);
+	}
+	
+	public static void setArguments(Arguments arg){
+		FillZoneState.countCol = arg.cols;
+		FillZoneState.countRow = arg.rows;
+		FillZoneProblem.MOVES = arg.moves;
+		FillZoneEngine.paint = arg.graphic;
+		FillZoneState.color = arg.color;
 	}
 
 	public static Arguments parseArguments(String[] args) {
@@ -45,6 +52,9 @@ public class Execute {
 			if (args.length >= 6) {
 				arguments.graphic = Boolean.valueOf(args[5]);
 			}
+			if (args.length >= 7) {
+				arguments.color = Boolean.valueOf(args[6]);
+			}
 		}
 		return arguments;
 	}
@@ -56,6 +66,7 @@ public class Execute {
 		int cols = 8;
 		int moves = 20;
 		boolean graphic = false;
+		boolean color = false;
 	}
 
 }

@@ -8,6 +8,7 @@ import gps.GPSNode;
 public class FillZoneEngine extends GPSEngine{
 
 	private int maxStep = 1;
+	public static boolean paint = false;;
 	private boolean ignore = false;
 	
 	@Override
@@ -52,7 +53,9 @@ public class FillZoneEngine extends GPSEngine{
 				add(node);
 			}
 		}
-//		System.out.println(node.getState());
+		if(paint){
+			System.out.println(node.getState());
+		}
 	}
 	
 	private void addHeuristic(GPSNode node){

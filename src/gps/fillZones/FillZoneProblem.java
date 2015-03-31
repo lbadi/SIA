@@ -11,6 +11,7 @@ import gps.api.GPSState;
 public class FillZoneProblem implements GPSProblem {
 
 	private Heuristic heuristic;
+	public static int MOVES = 30;
 
 	byte[][] board = { { 1, 3, 2, 2, 0, 5, 1, 1, 5, 5, 0, 1, 5, 2 },
 			{ 2, 0, 4, 4, 5, 4, 4, 0, 4, 4, 3, 2, 5, 5 },
@@ -37,7 +38,7 @@ public class FillZoneProblem implements GPSProblem {
 
 	@Override
 	public GPSState getInitState() {
-		FillZoneState state = new FillZoneState(30);
+		FillZoneState state = new FillZoneState(MOVES);
 		Random randomGenerator = new Random();
 		for (int i = 0; i < FillZoneState.countRow; i++) {
 			for (int j = 0; j < FillZoneState.countCol; j++) {
