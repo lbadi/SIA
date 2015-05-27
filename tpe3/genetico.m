@@ -2,17 +2,32 @@
 % n = Numero de individuos en la población
 % hidenN = Cantidad de neuronas en la capa oculta
 % k = cantidad de seleccionados.
-function ret = genetico(n,hidenN,k)
+% iterations = cantidad de iteraciones.
+function ret = genetico(n,hidenN,k,iterations)
 	% Elegir una población random
 	for i=1:n
-		poblation(i,1) = {rand(2,hidenN)};
-		poblation(i,2) = {rand(hidenN+1,1)};
+		poblation(i).w1 = rand(2,hidenN);
+		poblation(i).w2 = rand(hidenN+1,1);
 	end
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
 	% Ver de que manera es mas conveniente guardar el fitness
 	poblation = fitness(poblation);
 	% Calcular el fitness relativo
 	fit = relativeFitness(poblation);
+	 for i=1:iterations
+	 	poblation = selectionOne(poblation,fit);
+	 	poblation = fitness(poblation);
+	 	fit = relativeFitness(poblation);
+	 	totalFit = 0;
+	 	for j = 1 : length(poblation(:))
+	 		totalFit += poblation(j).fitness;
+	 	end
+	 	totalFit
+
+	 	% Calcualar el maximo de los fitness de la poblacion
+	 	max(cat(1,poblation.fitness))
+	 	fflush(stdout);
+	 end
 	ret = fit;
 
 	
@@ -30,8 +45,6 @@ function ret = genetico(n,hidenN,k)
 
 % Representación de un estado con una matriz.
 
-% en poblation{:,1} estan las matrices que van de la capa de entrada a la capa oculta
-% en poblation{:,2} estan las matrices que van de la capa oculta a la capa de salida
-% en poblation{:,3} estan los fitness para cada elemento
-
-poblation{1,1}
+% en poblation(:).w1 estan las matrices que van de la capa de entrada a la capa oculta
+% en poblation(:).w2 estan las matrices que van de la capa oculta a la capa de salida
+% en poblation(:).fitness estan los fitness para cada elemento

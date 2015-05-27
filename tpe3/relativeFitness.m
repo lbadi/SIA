@@ -1,11 +1,10 @@
 function ret = relativeFitness(poblation)
 	sumFit = 0;
-	length(poblation(:,1))
-	for i=1:length(poblation(:,1))
-		sumFit = sumFit + poblation{i,3};
+	for i=1:length(poblation(:))
+		sumFit = sumFit + poblation(i).fitness;
 	end
-	for i=1:length(poblation(:,1))
-		fit(i) = poblation{i,3} / sumFit;
+	for i=1:length(poblation(:))
+		fit(i) = poblation(i).fitness / sumFit;
 	end
 	ret = fit;
 end
