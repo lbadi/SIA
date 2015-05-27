@@ -4,7 +4,8 @@ function ret= selectionOne(poblation,fit)
 	while(i<=length(poblation))
 		selected = ruleta(2,fit);
 		% childs = onePointCross(poblation(selected(1)),poblation(selected(2)));
-		childs = onePointCross(poblation(selected(1)), poblation(selected(2)));
+		% childs = twoPointCross(poblation(selected(1)), poblation(selected(2)));
+		childs = anularCross(poblation(selected(1)), poblation(selected(2)));
 		newPoblation(i).w1 = childs(1).w1;
 		newPoblation(i).w2 = childs(1).w2;
 		% newPoblation(i).w1
