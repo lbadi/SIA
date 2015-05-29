@@ -9,7 +9,7 @@ function ret = plotComparation(w_1,w_2,g )
 		errors(i) = expected - out_2(i);
 	end
 	% plot(input,out_2, '*', sinhcos(input), '-')
-	hold on
+	hold on;
 	title ("sinh(x)*cos(x^2)");
 	plot(input, out_2, 'r*')
 	plot(input, sinhcos(input), 'b-')
@@ -18,6 +18,6 @@ function ret = plotComparation(w_1,w_2,g )
 	ylabel('f(x)');
 	axis([-2 2 -4 4]);
 	legend({"Red neuronal", "sinhcos(x^2)", "error" });
-	hold off
+	hold off;
 	refresh;
 end
