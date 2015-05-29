@@ -1,12 +1,12 @@
-function ret= selectionOne(poblation,fit)
+function ret= replaceOne(poblation)
 	i = 1;
 	pm = 0.01;
 	while(i<=length(poblation))
-		selected = ruleta(2,fit);
+		selected = ruleta(2,poblation);
 		% childs = onePointCross(poblation(selected(1)),poblation(selected(2)));
 		% childs = twoPointCross(poblation(selected(1)), poblation(selected(2)));
 		% childs = anularCross(poblation(selected(1)), poblation(selected(2)));
-		childs = anularCross(poblation(selected(1)), poblation(selected(2)), 0.5);
+		childs = uniCross(selected(1), selected(2), 0.5);
 		newPoblation(i).w1 = childs(1).w1;
 		newPoblation(i).w2 = childs(1).w2;
 		% newPoblation(i).w1
