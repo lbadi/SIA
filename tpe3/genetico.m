@@ -16,6 +16,7 @@ function ret = genetico(n,hidenN,k,iterations,fitnessWish = 100, timeToMakeProgr
 	betterFitnessOfAllGenerations = 0;
 	timeFromLastImprove = 0;
 	i = 0;
+	load('config/replaceMixed.cfg')
 	while(1)
 		% Checkeo las razones para terminar
 		if(i > iterations)
@@ -31,7 +32,9 @@ function ret = genetico(n,hidenN,k,iterations,fitnessWish = 100, timeToMakeProgr
 			break;
 		end
 
-	 	poblation = replaceThree(poblation,@eliteruleta,@onePointCross,@mutateLineal,0.1,@ruleta,16);
+	
+	
+	 	poblation = replaceMixed(poblation,rmselectMethod,rmcrossOver,rmmutation,rmpm,rmselectMethodForReplace,rmk,rmsecondSelectMethodForReplace,rmnumbersOfSelectedWithFirstMethod,i);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 
