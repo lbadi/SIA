@@ -11,5 +11,5 @@ function ret = elite(k, poblation)
 		end
 		selected(i) = poblation(max_index);
 		poblation(max_index) = [];
-	ret = selected
+	ret = selected;
 end
