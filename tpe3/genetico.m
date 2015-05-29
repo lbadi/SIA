@@ -13,11 +13,8 @@ function ret = genetico(n,hidenN,k,iterations)
 	% Ver de que manera es mas conveniente guardar el fitness
 	poblation = fitness(poblation);
 	% Calcular el fitness relativo
-	fit = relativeFitness(poblation);
 	for i=1:iterations
-	 	poblation = selectionOne(poblation,fit);
-	 	poblation = fitness(poblation);
-	 	fit = relativeFitness(poblation);
+	 	poblation = replaceThree(poblation,@torneos,@onePointCross,@mutateLineal,0.1,@ruleta,4);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 	 	for j = 1 : length(poblation(:))
@@ -28,14 +25,16 @@ function ret = genetico(n,hidenN,k,iterations)
 	 	end
 	 	totalFit
 	 	betterElement.fitness
-	 	plotComparation(betterElement.w1,betterElement.w2,@activation);
+	 	if mod(i, 1000) == 0
+	 		plotComparation(betterElement.w1,betterElement.w2,@activation);
+	 	end
 	 	clf;
 	 	% Calcualar el maximo de los fitness de la poblacion
 	 	% max(cat(1,poblation.fitness))
 
 	 	fflush(stdout);
 	end
-	ret = fit;
+	ret = betterElement.fitness;
 
 	
 
