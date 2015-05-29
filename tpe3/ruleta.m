@@ -1,6 +1,10 @@
-function ret = ruleta(k,poblation)
+function ret = ruleta(k,poblation, alternative_fitness)
 	randoms = sort(rand(1,k));
-	fit = relativeFitness(poblation);
+	if(exist("alternative_fitness","var"))
+		fit = alternative_fitness;
+	else
+		fit = relativeFitness(poblation);
+	end
 	acum = 0;
 	j = 1;
 	for i=1:length(fit)
