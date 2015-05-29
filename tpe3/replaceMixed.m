@@ -1,4 +1,4 @@
-function ret = replaceMixed(poblation,selectMethod,crossOver,mutation,pm,selectMethodForReplace,k,secondSelectMethodForReplace,numbersOfSelectedWithFirstMethod)
+function ret = replaceMixed(poblation,selectMethod,crossOver,mutation,pm,selectMethodForReplace,k,secondSelectMethodForReplace,numbersOfSelectedWithFirstMethod,iterations)
 
 	randoms = randperm(k);
 	% Selecciono
@@ -10,8 +10,8 @@ function ret = replaceMixed(poblation,selectMethod,crossOver,mutation,pm,selectM
 		child(i) = childs(1);
 		child(i+1) = childs(2);
 
-		child(i) = mutation(child(i),pm,0.5);
-		child(i+1) = mutation(child(i+1),pm,0.5);
+		child(i) = mutation(child(i),pm,0.5,iterations,1);
+		child(i+1) = mutation(child(i+1),pm,0.5,iterations,1);
 		i = i + 2;
 	end
 	% Calculo el fitness a los nuevos

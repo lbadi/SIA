@@ -12,9 +12,12 @@ function ret = genetico(n,hidenN,k,iterations)
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
 	% Ver de que manera es mas conveniente guardar el fitness
 	poblation = fitness(poblation);
+	
+	load('config/replaceMixed.cfg')
+	
 	% Calcular el fitness relativo
 	for i=1:iterations
-	 	poblation = replaceMixed(poblation,@torneos,@onePointCross,@mutateLineal,0.1,@ruleta,4,@torneos,5);
+	 	poblation = replaceMixed(poblation,rmselectMethod,rmcrossOver,rmmutation,rmpm,rmselectMethodForReplace,rmk,rmsecondSelectMethodForReplace,rmnumbersOfSelectedWithFirstMethod,i);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 	 	for j = 1 : length(poblation(:))
