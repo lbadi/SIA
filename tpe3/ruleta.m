@@ -1,4 +1,4 @@
-function ret = ruleta(k,fit)
+function ret = universal(k,fit)
 	randoms = sort(rand(1,k));
 	acumFit = zeros(1,length(fit));
 	acum = 0;
