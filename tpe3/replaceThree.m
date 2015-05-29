@@ -1,6 +1,7 @@
 function ret = replaceThree(poblation,selectMethod,crossOver,mutation,pm,selectMethodForReplace,k)
 
 	randoms = randperm(k);
+
 	% Selecciono
 	selected = selectMethod(k,poblation);
 	i=1;

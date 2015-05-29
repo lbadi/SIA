@@ -5,12 +5,9 @@ function ret = torneos(k, poblation, m=3)
 		do
 			max_fitness = 0;
 			max_index = 0;
-			% Elijo al azar el primero competidor
-			% competitors=[randi(poblation_size)];
 			competitors = [];
 			for j=1:m
 				% Agrego un competidor al azar que no este en competitors
-				% n = randi(poblation_size);
 				do
 					n = randi(poblation_size);
 				until(!ismember(n, competitors))

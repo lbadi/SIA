@@ -8,7 +8,7 @@ function ret = plotComparation(w_1,w_2,g )
 		expected = sinhcos(input(i));
 		errors(i) = expected - out_2(i);
 	end
-	% clf;
+	clf;
 	% plot(input,out_2, '*', sinhcos(input), '-')
 	hold all
 	title ("sinh(x)*cos(x^2)");
@@ -21,4 +21,6 @@ function ret = plotComparation(w_1,w_2,g )
 	legend({"Red neuronal", "sinhcos(x^2)", "error" });
 	hold off
 	drawnow;
+	hold off;
+	refresh;
 end
