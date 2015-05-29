@@ -13,11 +13,9 @@ function ret = genetico(n,hidenN,k,iterations)
 	% Ver de que manera es mas conveniente guardar el fitness
 	poblation = fitness(poblation);
 	% Calcular el fitness relativo
-	fit = relativeFitness(poblation);
 	for i=1:iterations
-	 	poblation = selectionOne(poblation,fit);
+	 	poblation = replaceOne(poblation);
 	 	poblation = fitness(poblation);
-	 	fit = relativeFitness(poblation);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 	 	for j = 1 : length(poblation(:))
