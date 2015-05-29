@@ -14,7 +14,7 @@ function ret = genetico(n,hidenN,k,iterations)
 	poblation = fitness(poblation);
 	% Calcular el fitness relativo
 	for i=1:iterations
-	 	poblation = replaceThree(poblation,@ruleta,@onePointCross,@mutateLineal,0.1,@ruleta,4);
+	 	poblation = replaceThree(poblation,@ruleta,@twoPointCross,@mutateLineal,0.1,@ruleta,4);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 	 	for j = 1 : length(poblation(:))
@@ -26,7 +26,6 @@ function ret = genetico(n,hidenN,k,iterations)
 	 	totalFit
 	 	betterElement.fitness
 	 	plotComparation(betterElement.w1,betterElement.w2,@activation);
-	 	clf;
 	 	% Calcualar el maximo de los fitness de la poblacion
 	 	% max(cat(1,poblation.fitness))
 

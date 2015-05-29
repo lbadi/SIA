@@ -2,7 +2,7 @@ function ret = replaceTwo(poblation,selectMethod,crossOver,mutation,pm,selectMet
 
 	randoms = randperm(k);
 	% Selecciono
-	selected = selectMethod(k,poblation)
+	selected = selectMethod(k,poblation);
 	i=1;
 	% Cruzo
 	while(i < length(selected))
