@@ -1,4 +1,5 @@
-function ret = uniCross(e1,e2,p=0.5)
+function ret = uniCross(e1,e2,co)
+	p = co.unip;
 	element1 = [toVector(e1.w1) toVector(e1.w2)];
 	element2 = [toVector(e2.w1) toVector(e2.w2)];
 	child1 = element1;

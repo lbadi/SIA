@@ -1,4 +1,5 @@
-function ret = torneos(k, poblation, m=3)
+function ret = torneos(k, poblation, c)
+	m = c.tm;
 	poblation_size = length(poblation(:));
 	selected_indices = [];
 	for i=1:k

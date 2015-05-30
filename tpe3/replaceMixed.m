@@ -2,7 +2,9 @@ function ret = replaceMixed(poblation,selectMethod,crossOver,mutation,pm,selectM
 
 	randoms = randperm(k);
 	% Selecciono
-	selected = selectMethod(k,poblation);
+	%aca hago el load
+	c.iterations = iterations;
+	selected = selectMethod(k,poblation,c);
 	i=1;
 	% Cruzo
 	while(i < length(selected))

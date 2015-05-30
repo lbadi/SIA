@@ -1,7 +1,19 @@
-function ret = mperceptron(n,lengthOut,hidenN, iterations, eta, g, gDerivada, acceptedError, w_1, w_2 , graph,alpha,etaAdaptation,etainc,etadec)
+function ret = mperceptron(w_1,w_2,p)
 	% sinh(x)cos(x^2)
 	% Si hace falta inicializo los pesos, sino pruebo con los que me pasaron.
-	
+	g = p.g;
+	acceptedError = p.acceptedError;
+	alpha = p.alpha;
+	eta = p.eta;
+	etaAdaptation = p.etaAdaptation;
+	etadec = p.etadec;
+	etainc = p.etainc;
+	gDerivada = p.gDerivada;
+	graph = p.graph;
+	hidenN = p.hidenN;
+	iterations = p.iterations;
+	lengthOut = p.lengthOut;
+	n = p.n;
 	if(w_1 == 0)
 		w_1 = rand(n + 1,hidenN);
 	end

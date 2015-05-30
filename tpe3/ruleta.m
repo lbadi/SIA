@@ -1,7 +1,7 @@
-function ret = ruleta(k,poblation, alternative_fitness)
+function ret = ruleta(k,poblation, c)
 	randoms = sort(rand(1,k));
-	if(exist("alternative_fitness","var"))
-		fit = alternative_fitness;
+	if(isfield(c,"alternative_fitness"))
+		fit = c.alternative_fitness;
 	else
 		fit = relativeFitness(poblation);
 	end

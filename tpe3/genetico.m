@@ -3,20 +3,35 @@
 % hidenN = Cantidad de neuronas en la capa oculta
 % k = cantidad de seleccionados.
 % iterations = cantidad de iteraciones.
-function ret = genetico(n,hidenN,k,iterations,fitnessWish = 100, timeToMakeProgress = 1000)
+function ret = genetico()
+	%Se cargan las configuraciones
+	g = loadParameters('genetico');
+	sm = loadParameters('selection');
+	co = loadParameters('crossover');
+	m = loadParameters('mutation');
+	sr = loadParameters('selection2');
+	r = loadParameters('replace');
+	p = loadParameters('mperceptron');
+	replaceMethod = r.replaceMethod;
+	iterations = g.iterations;
+	fitnessWish = g.fitnessWish
+	timeToMakeProgress = g.timeToMakeProgress
+	
+
 	% Elegir una población random
-	for i=1:n
-		poblation(i).w1 = rand(2,hidenN);
-		poblation(i).w2 = rand(hidenN+1,1);
+	for i=1:g.n
+		poblation(i).w1 = rand(2,g.hidenN);
+		poblation(i).w2 = rand(g.hidenN+1,1);
 	end
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
 	% Ver de que manera es mas conveniente guardar el fitness
-	poblation = fitness(poblation);
+	poblation = fitness(poblation,p);
 	betterElement.fitness = 0;
 	betterFitnessOfAllGenerations = 0;
 	timeFromLastImprove = 0;
 	i = 0;
-	load('config/replaceMixed.cfg')
+	
+
 	while(1)
 		% Checkeo las razones para terminar
 		if(i > iterations)
@@ -31,10 +46,10 @@ function ret = genetico(n,hidenN,k,iterations,fitnessWish = 100, timeToMakeProgr
 			reassonToEnd = "No hubo progreso en mas generaciones que las deseadas";
 			break;
 		end
-
-	
-	
-	 	poblation = replaceMixed(poblation,rmselectMethod,rmcrossOver,rmmutation,rmpm,rmselectMethodForReplace,rmk,rmsecondSelectMethodForReplace,rmnumbersOfSelectedWithFirstMethod,i);
+		sr.iteration = i;
+		sm.iteration = i;
+		m.iteration = i;
+	 	poblation = replaceMethod(poblation,g.k,sm,co,m,sr,p);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 

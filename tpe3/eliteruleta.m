@@ -1,4 +1,5 @@
-function ret = eliteruleta(k,poblation,N1=0)
+function ret = eliteruleta(k,poblation,c)
+	N1 = c.N1;
 	poblation_elite = elite(N1, poblation);
 	poblation_ruleta = ruleta(k - N1, poblation);
 	ret = [poblation_elite poblation_ruleta];

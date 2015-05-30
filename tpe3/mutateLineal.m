@@ -1,5 +1,6 @@
-function ret = mutateLineal(element, mutateProbability, mutateStrength)
-
+function ret = mutateLineal(element, c)
+	mutateProbability = c.mutateProbability;
+	mutateStrength = c.mutateStrength;
 	for i=1 : length(element.w1(:))
 		if rand < mutateProbability
 			element.w1(i) = element.w1(i) +  2 * (rand - 0.5) * mutateStrength ;
