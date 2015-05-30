@@ -27,7 +27,7 @@ function ret = mperceptron(w_1,w_2,p)
 	etait=0;
 	etaincs=0;
 	etadecs=0;
-	inputPattern = [-2:0.02:2];
+	inputPattern = [-2:0.05:2];
 	% inputPattern = [-1.8 -0.85 0.8 1.8];
 	% inputPattern = [-2:0.001:-1.8 -2:0.01:-1.7 -1.7:0.2:-1.2 -1.2:0.01:-0.75 -0.75:0.2:0.7 0.7:0.01:0.9 0.9:0.2:1.75 1.75:0.01:1.85 1.85:0.01:2];
 	% inputPattern = [ -1.9:0.01:-1.7 , -1.1:0.01:0.09 , 0.7:0.1:0.9 1.85:0.01:2 ];
@@ -96,11 +96,11 @@ function ret = mperceptron(w_1,w_2,p)
 				%y vuelvo a utilizar los w's anteriores
 				promError(i) = prevpromError;
 				%Esto no se hace para salir de minimos
-				% w_1 = previousW_1;
-				% w_2 = previousW_2;
+				w_1 = previousW_1;
+				w_2 = previousW_2;
 				eta = eta - eta*etadec;
 				etadecs++;
-				% i--;
+				i--;
 			else
 				%Aumento el eta proporcionalmente
 				eta = eta+etainc;
