@@ -5,7 +5,7 @@ function ret = anularCross(e1,e2)
 	l = randi(length(element1) / 2);
 
 	overFlow = l + locus - length(element1);
-
+	
 	if(overFlow < 0)
 		child1 = [ element1(1:locus-1) element2(locus:locus+l-1) element1(locus+l:length(element1))];
 		child2 = [ element2(1:locus-1) element1(locus:locus+l-1) element2(locus+l:length(element1))];

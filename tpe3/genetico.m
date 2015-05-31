@@ -23,6 +23,8 @@ function ret = genetico()
 	m.iterations = iterations;
 	sr.poblationSize = g.n;
 	sm.poblationSize = g.n;
+	poblationSize = g.n;
+	rand('seed',314159265359);
 	% Elegir una población random
 	if(g.useConfigPoblation)
 		pob = loadParameters('poblation');
@@ -31,6 +33,7 @@ function ret = genetico()
 		for i=1:g.n
 			poblation(i).w1 = rand(2,g.hidenN) -0.5;
 			poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
+			poblation(i).eta = p.eta;
 		end
 	end
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
@@ -40,8 +43,9 @@ function ret = genetico()
 	betterFitnessOfAllGenerations = 0;
 	timeFromLastImprove = 0;
 	iterationswithoutchange = 0;
-	i = 0;
-	
+	i = 1;
+	bestElementFitnesses = zeros(1, iterations);
+	averageFitnesses = zeros(1, iterations);
 
 	while(1)
 		% Checkeo las razones para terminar
@@ -89,18 +93,22 @@ function ret = genetico()
 	 		betterFitnessOfAllGenerations = betterElement.fitness;
 	 	end
 	 	printf("Generacion numero : %d \n" , i);
-	 	totalFit
-	 	betterGenerationFitness=betterElement.fitness
+	 	totalFitness = totalFit
+	 	betterElementFitness=betterElement.fitness
 
-	 	if mod(i, 1000) == 0
+	 	bestElementFitnesses(i) = betterElement.fitness;
+	 	averageFitnesses(i) = totalFit/length(poblation);
+	 	if mod(i, 10) == 0
+	 		plotFitnessEvolution(bestElementFitnesses, averageFitnesses, iterations, i);
 	 		plotComparation(betterElement.w1,betterElement.w2,@activation);
 	 	end
 	 	% Calcualar el maximo de los fitness de la poblacion
-	 	max(cat(1,poblation.fitness))
+	 	max(cat(1,poblation.fitness));
 	 	i++;
 	 	fflush(stdout);
 	end
 	printf("La razon para terminar : %s \n", reasonToEnd);
+	system('beep');
 	ret = betterElement;
 
 
