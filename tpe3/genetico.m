@@ -14,11 +14,13 @@ function ret = genetico()
 	p = loadParameters('mperceptron');
 	replaceMethod = r.replaceMethod;
 	iterations = g.iterations;
-	fitnessWish = g.fitnessWish
-	timeToMakeProgress = g.timeToMakeProgress
+	fitnessWish = g.fitnessWish;
+	timeToMakeProgress = g.timeToMakeProgress;
 	structuraliterationsallowed = g.structuraliterationsallowed;
 	relevantpercent = g.relevantpercent;
-
+	sm.iterations = iterations;
+	sr.iterations = iterations;
+	m.iterations = iterations;
 	% Elegir una población random
 	for i=1:g.n
 		poblation(i).w1 = rand(2,g.hidenN) -0.5;

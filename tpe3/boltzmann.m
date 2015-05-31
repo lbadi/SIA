@@ -4,8 +4,8 @@
 
 function ret = boltzmann(k, poblation, c)
 	t = c.iteration;
-	m = c.bm;
 	T = c.T;
+	m = (T - 273) / c.iterations;
 	T = T - m * t;
 	norm_factor = 0;
 	for j = 1 : length(poblation(:))
