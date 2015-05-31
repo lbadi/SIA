@@ -8,7 +8,7 @@ function ret = plotFitnessEvolution(bestElementFitnesses, averageFitnesses, iter
 	plot(generations(1:i), averageFitnesses(1:i), 'b-', 'LineWidth',2);
 	xlabel('Generación');
 	ylabel('Fitness');
-	axis([0 iterations 0 150]);
+	axis([0 iterations 0 200]);
 	legend({"Mejor individuo", "Promedio"});
 	hold off;
 	drawnow;
