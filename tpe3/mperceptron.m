@@ -27,7 +27,9 @@ function ret = mperceptron(w_1,w_2,p)
 	etait=0;
 	etaincs=0;
 	etadecs=0;
-	inputPattern = [-2:0.1:2];
+	betterError = 1000;
+	betterW = {0 0};
+	inputPattern = [-2:0.01:2];
 	%inputPattern = [-2:0.02:2];
 	% inputPattern = [-1.8 -0.85 0.8 1.8];
 	% inputPattern = [-2:0.001:-1.8 -2:0.01:-1.7 -1.7:0.2:-1.2 -1.2:0.01:-0.75 -0.75:0.2:0.7 0.7:0.01:0.9 0.9:0.2:1.75 1.75:0.01:1.85 1.85:0.01:2];
@@ -83,6 +85,11 @@ function ret = mperceptron(w_1,w_2,p)
 			prevpromError = promError(i-1);
 		end
 		promError(i) = errorAcumulation / t;
+		% Me guardo siempre el mejor que consegui
+		if(promError(i) < betterError)
+			betterW = {w_1 w_2};
+			betterError = promError(i);
+		end
 		if(promError(i) < acceptedError)
 			printf ("Corte por aceptación")
 			break
@@ -114,15 +121,14 @@ function ret = mperceptron(w_1,w_2,p)
 		end
 
 		% Voy imprimiendo la aproximación de la función.
-		w = {w_1 w_2};
 		if(graph == 1)
 			clf('reset');
-			plotComparation(w,g);
+			plotComparation(w_1,w_2,g);
 			refresh;
 		end
 		errorAcumulation = 0;
 		% i++;
 	end
 	% printf("Iteraciones: %d\nIncrementos de eta: %d\nDecrementos de eta: %d\n",etait,etaincs,etadecs);
-	ret = {w_1 w_2 promError etaincs etadecs};
+	ret = {betterW{1} betterW{2} promError etaincs etadecs};
 end

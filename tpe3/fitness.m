@@ -9,8 +9,7 @@ function ret = fitness(poblation,p)
 			poblation(i).w1 = w{1};
 			poblation(i).w2 = w{2};
 		end
-		poblation(i).fitness = 1/calculateError(w_1,w_2);
-		fit(i) = poblation(i).fitness;
+		poblation(i).fitness = 1/calculateError(poblation(i).w1,poblation(i).w2);
 	end
 	
 	ret = poblation;
