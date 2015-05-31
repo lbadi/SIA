@@ -21,6 +21,8 @@ function ret = genetico()
 	sm.iterations = iterations;
 	sr.iterations = iterations;
 	m.iterations = iterations;
+	sr.poblationSize = g.n;
+	sm.poblationSize = g.n;
 	% Elegir una población random
 	for i=1:g.n
 		poblation(i).w1 = rand(2,g.hidenN) -0.5;
