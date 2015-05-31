@@ -96,11 +96,14 @@ function ret = mperceptron(w_1,w_2,p)
 				%y vuelvo a utilizar los w's anteriores
 				promError(i) = prevpromError;
 				%Esto no se hace para salir de minimos
-				w_1 = previousW_1;
-				w_2 = previousW_2;
+				if(p.throwWeights)
+					w_1 = previousW_1;
+					w_2 = previousW_2;
+					i--;
+				end
+				
 				eta = eta - eta*etadec;
 				etadecs++;
-				i--;
 			else
 				%Aumento el eta proporcionalmente
 				eta = eta+etainc;

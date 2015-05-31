@@ -2,9 +2,9 @@ function ret = fitness(poblation,p)
 	fitness = zeros(1,length(poblation));
 	% Calculo el fitness para cada elemento
 	for i=1:length(poblation)
+		w_1 = poblation(i).w1;
+		w_2 = poblation(i).w2;
 		if(p.useBackPropagation)
-			w_1 = poblation(i).w1;
-			w_2 = poblation(i).w2;
 			w = mperceptron(w_1,w_2,p);
 			poblation(i).w1 = w{1};
 			poblation(i).w2 = w{2};

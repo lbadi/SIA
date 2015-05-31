@@ -10,13 +10,13 @@ function ret = mutateNoLineal(element, c)
 	for i=1 : length(element.w1(:))
 		if rand < mutateProbability
 			r = (rand - 0.5) * 2;
-			element.w1(i) = element.w1(i) +  r * mutateStrength - r * mutateStrength * (1-tanh(b*iteration));
+			element.w1(i) = element.w1(i) +  r * mutateStrength - r * mutateStrength * tanh(b*iteration);
 		end
 	end
 	for i=1 : length(element.w2(:))
 		if rand < mutateProbability
 			r = (rand - 0.5) * 2;
-			element.w2(i) = element.w2(i) +  r * mutateStrength - r * mutateStrength * (1-tanh(b*iteration));
+			element.w2(i) = element.w2(i) +  r * mutateStrength - r * mutateStrength * tanh(b*iteration);
 		end
 	end
 

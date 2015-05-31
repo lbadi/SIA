@@ -16,12 +16,13 @@ function ret = genetico()
 	iterations = g.iterations;
 	fitnessWish = g.fitnessWish
 	timeToMakeProgress = g.timeToMakeProgress
-	
+	structuraliterationsallowed = g.structuraliterationsallowed;
+	relevantpercent = g.relevantpercent;
 
 	% Elegir una población random
 	for i=1:g.n
-		poblation(i).w1 = rand(2,g.hidenN);
-		poblation(i).w2 = rand(g.hidenN+1,1);
+		poblation(i).w1 = rand(2,g.hidenN) -0.5;
+		poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
 	end
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
 	% Ver de que manera es mas conveniente guardar el fitness
@@ -29,30 +30,42 @@ function ret = genetico()
 	betterElement.fitness = 0;
 	betterFitnessOfAllGenerations = 0;
 	timeFromLastImprove = 0;
+	iterationswithoutchange = 0;
 	i = 0;
 	
 
 	while(1)
 		% Checkeo las razones para terminar
 		if(i > iterations)
-			reassonToEnd = "Maxima cantidad de generaciones alcanzadas";
+			reassonToEnd = "Maxima cantidad de generaciones alcanzadas.";
 			break;
 		end
 		if(betterElement.fitness >= fitnessWish)
-			reassonToEnd = "Se alcanzo un elemento suboptimo con el fitness deseado";
+			reassonToEnd = "Se alcanzo un elemento suboptimo con el fitness deseado.";
 			break;
 		end
 		if(timeFromLastImprove>= timeToMakeProgress)
-			reassonToEnd = "No hubo progreso en mas generaciones que las deseadas";
+			reassonToEnd = "No hubo progreso en mas generaciones que las deseadas.";
+			break;
+		end
+		if(iterationswithoutchange>structuraliterationsallowed)
+			reassonToEnd = "Una gran parte de la población no cambio hace mucho tiempo.";
 			break;
 		end
 		sr.iteration = i;
 		sm.iteration = i;
 		m.iteration = i;
+		oldpoblation = poblation;
 	 	poblation = replaceMethod(poblation,g.k,sm,co,m,sr,p);
 	 	totalFit = 0;
 	 	betterElement.fitness = 0;
 
+	 	%validacion de cambio de una parte relevante de la poblacion
+	 	if(checkStructural(oldpoblation,poblation,relevantpercent))
+	 		iterationswithoutchange++;
+	 	else
+	 		iterationswithoutchange = 0;
+	 	end
 	 	% Veo quien tiene mejor fitness
 	 	for j = 1 : length(poblation(:))
 	 		totalFit += poblation(j).fitness;
