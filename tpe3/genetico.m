@@ -37,19 +37,19 @@ function ret = genetico()
 	while(1)
 		% Checkeo las razones para terminar
 		if(i > iterations)
-			reassonToEnd = "Maxima cantidad de generaciones alcanzadas.";
+			reasonToEnd = "Maxima cantidad de generaciones alcanzadas.";
 			break;
 		end
 		if(betterElement.fitness >= fitnessWish)
-			reassonToEnd = "Se alcanzo un elemento suboptimo con el fitness deseado.";
+			reasonToEnd = "Se alcanzo un elemento suboptimo con el fitness deseado.";
 			break;
 		end
 		if(timeFromLastImprove>= timeToMakeProgress)
-			reassonToEnd = "No hubo progreso en mas generaciones que las deseadas.";
+			reasonToEnd = "No hubo progreso en mas generaciones que las deseadas.";
 			break;
 		end
 		if(iterationswithoutchange>structuraliterationsallowed)
-			reassonToEnd = "Una gran parte de la población no cambio hace mucho tiempo.";
+			reasonToEnd = "Una gran parte de la población no cambio hace mucho tiempo.";
 			break;
 		end
 		sr.iteration = i;
@@ -81,7 +81,8 @@ function ret = genetico()
 	 	end
 	 	printf("Generacion numero : %d \n" , i);
 	 	totalFit
-	 	betterElement.fitness
+	 	betterGenerationFitness=betterElement.fitness
+
 	 	if mod(i, 1000) == 0
 	 		plotComparation(betterElement.w1,betterElement.w2,@activation);
 	 	end
@@ -90,7 +91,7 @@ function ret = genetico()
 	 	i++;
 	 	fflush(stdout);
 	end
-	printf("La razon para terminar : %s \n", reassonToEnd);
+	printf("La razon para terminar : %s \n", reasonToEnd);
 	ret = betterElement;
 
 	

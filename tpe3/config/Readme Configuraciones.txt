@@ -7,8 +7,10 @@ hidenN: Cantidad de neuronas en la capa oculta.
 iterations: Cantidad de generaciones.
 k:?
 n: Cantidad de individuos.
-fitnessWish
-timeToMakeProgress
+fitnessWish: ?
+timeToMakeProgress: ?
+relevantpercent: Porcentaje de la población que se considera relevante para la validación de corte por estructura.
+structuraliterationsallowed: Iteraciones permitidas antes de que se llegue al corte por estructura.
 
 ----------------------
 ----------------------
@@ -21,6 +23,7 @@ acceptedError: Error de aceptación.
 alpha: Parámetro alpha de momentum.
 eta: Eta.
 etaAdaptation: Flag que determina si se utiliza el eta adaptativo.
+throwWeights: Flag para determinar si se tiran o no los pesos y se realiza una nueva iteracion, en el caso de un aumento del error con el eta adaptativo.
 etadec: Decremento geométrico de eta.
 etainc: Incremento constante de eta.
 gDerivada: Derivada de la función de activación.
@@ -28,17 +31,20 @@ graph: 1 si se desea que se grafique en cada época.
 iterations: Cantidad de epocas.
 lengthOut: Longitud de la salida, en nuestro caso 1.
 n: Longitud de la entrada, en nuestro caso 1.
+
 ----------------------
 ----------------------
 replace.cfg
 
 replaceMethod: Método de reemplazo a utilizar (replaceOne,replaceTwo,replaceThree).
+
 ----------------------
 ----------------------
 crossover.cfg
 
 crossOver: Método de crossover a utilizar (twoPointCross,uniCross,onePointCross,onePointCross2,anularCross).
 unip:?
+
 ----------------------
 ----------------------
 mutation.cfg
@@ -47,6 +53,7 @@ mutation: Método de mutación a utilizar (mutateLineal,mutateNoLineal).
 mutateProbability: Probabilidad de mutación.
 mutateStrength: Fuerza de mutación.
 b: Parámetro beta para la función de mutación no lineal.
+
 ----------------------
 ----------------------
 selection.cfg
@@ -56,4 +63,5 @@ T:?
 bm:?
 N1:?
 tm:?
+
 ----------------------
