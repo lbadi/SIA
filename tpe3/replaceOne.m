@@ -8,11 +8,13 @@ function ret= replaceOne(poblation,k,sm,co,m,sr,p)
 		childs = co.crossOver(selected(1), selected(2), co);
 		newPoblation(i).w1 = childs(1).w1;
 		newPoblation(i).w2 = childs(1).w2;
+		newPoblation(i).eta = childs(1).eta;
 		% newPoblation(i).w1
 		newPoblation(i) = m.mutation(newPoblation(i),m);
 		% newPoblation(i).w1
 		newPoblation(i+1).w1 = childs(2).w1;
 		newPoblation(i+1).w2 = childs(2).w2;
+		newPoblation(i+1).eta = childs(2).eta;
 		newPoblation(i+1) = m.mutation(newPoblation(i),m);
 		i = i + 2;
 	end

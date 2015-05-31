@@ -31,6 +31,7 @@ function ret = genetico()
 		for i=1:g.n
 			poblation(i).w1 = rand(2,g.hidenN) -0.5;
 			poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
+			poblation(i).eta = p.eta;
 		end
 	end
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
@@ -101,6 +102,7 @@ function ret = genetico()
 	 	fflush(stdout);
 	end
 	printf("La razon para terminar : %s \n", reasonToEnd);
+	system('beep');
 	ret = betterElement;
 
 

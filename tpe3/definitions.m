@@ -22,7 +22,6 @@ Métodos de crossOver
 function ret = twoPointCross
 function ret = uniCross
 function ret = onePointCross
-function ret = onePointCross2
 function ret = anularCross
 
 
