@@ -94,18 +94,6 @@ function ret = genetico()
 	printf("La razon para terminar : %s \n", reasonToEnd);
 	ret = betterElement;
 
-	
-
-
-
-% (While esa población no cumpla algun requisito de corte)
-	% Selecciono(Ruleta, etc...)
-	% selected = ruleta(k,fit);
-	% Hago la cruza ()
-	% Hago las mutaciones
-	% Calculo el fitness para los nuevos individuos y entreno un poco con backpropagation
-	% Hago el reemplazo
-
 
 % Representación de un estado con una matriz.
 
