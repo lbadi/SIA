@@ -24,9 +24,14 @@ function ret = genetico()
 	sr.poblationSize = g.n;
 	sm.poblationSize = g.n;
 	% Elegir una población random
-	for i=1:g.n
-		poblation(i).w1 = rand(2,g.hidenN) -0.5;
-		poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
+	if(g.useConfigPoblation)
+		pob = loadParameters('poblation');
+		poblation = pob.poblation;
+	else
+		for i=1:g.n
+			poblation(i).w1 = rand(2,g.hidenN) -0.5;
+			poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
+		end
 	end
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
 	% Ver de que manera es mas conveniente guardar el fitness
@@ -91,7 +96,7 @@ function ret = genetico()
 	 		plotComparation(betterElement.w1,betterElement.w2,@activation);
 	 	end
 	 	% Calcualar el maximo de los fitness de la poblacion
-	 	% max(cat(1,poblation.fitness))
+	 	max(cat(1,poblation.fitness))
 	 	i++;
 	 	fflush(stdout);
 	end
