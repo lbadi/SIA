@@ -23,6 +23,7 @@ function ret = genetico()
 	m.iterations = iterations;
 	sr.poblationSize = g.n;
 	sm.poblationSize = g.n;
+	poblationSize = g.n;
 	% Elegir una población random
 	if(g.useConfigPoblation)
 		pob = loadParameters('poblation');
@@ -40,8 +41,9 @@ function ret = genetico()
 	betterFitnessOfAllGenerations = 0;
 	timeFromLastImprove = 0;
 	iterationswithoutchange = 0;
-	i = 0;
-	
+	i = 1;
+	bestElementFitnesses = zeros(1, iterations);
+	averageFitnesses = zeros(1, iterations);
 
 	while(1)
 		% Checkeo las razones para terminar
@@ -92,7 +94,10 @@ function ret = genetico()
 	 	totalFit
 	 	betterGenerationFitness=betterElement.fitness
 
-	 	if mod(i, 1000) == 0
+	 	bestElementFitnesses(i) = betterElement.fitness;
+	 	averageFitnesses(i) = totalFit/length(poblation);
+	 	if mod(i, 10) == 0
+	 		plotFitnessEvolution(bestElementFitnesses, averageFitnesses, iterations, i);
 	 		plotComparation(betterElement.w1,betterElement.w2,@activation);
 	 	end
 	 	% Calcualar el maximo de los fitness de la poblacion
