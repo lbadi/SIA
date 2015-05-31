@@ -6,7 +6,8 @@ function ret = mutateNoLineal(element, c)
 	mutateProbability = c.mutateProbability;
 	mutateStrength = c.mutateStrength;
 	iteration = c.iteration;
-	b = c.b;
+	%b = c.b;
+	b = atanh(1-0.001)/c.iterations;
 	for i=1 : length(element.w1(:))
 		if rand < mutateProbability
 			r = (rand - 0.5) * 2;
