@@ -5,10 +5,10 @@ genetico.cfg
 
 hidenN: Cantidad de neuronas en la capa oculta.
 iterations: Cantidad de generaciones.
-k:?
+k:Cantidad de elementos a cruzar en cada generación.
 n: Cantidad de individuos.
-fitnessWish: ?
-timeToMakeProgress: ?
+fitnessWish: El fitness que se desea alcanzar para el corte.
+timeToMakeProgress: Tiempo que tiene para mostrar algun progreso en el mejor fitness
 relevantpercent: Porcentaje de la población que se considera relevante para la validación de corte por estructura.
 structuraliterationsallowed: Iteraciones permitidas antes de que se llegue al corte por estructura.
 
@@ -43,7 +43,7 @@ replaceMethod: Método de reemplazo a utilizar (replaceOne,replaceTwo,replaceThr
 crossover.cfg
 
 crossOver: Método de crossover a utilizar (twoPointCross,uniCross,onePointCross,onePointCross2,anularCross).
-unip:?
+unip:Probabilidad de cruzar cada alelo en la cruza uniforme.
 
 ----------------------
 ----------------------

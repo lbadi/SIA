@@ -1,3 +1,4 @@
 .classpath
 *.class
 tpe3/octave-workspace
+tpe3/config/*
