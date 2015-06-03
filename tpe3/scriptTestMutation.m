@@ -34,4 +34,3 @@ function scriptTestMutation(filename,mutation)
 	fclose(file_id);
 	system('beep');
 end
-%EJ: graphEtaTest(0.01,0.1,0.01,0.1,0.5,0.1,"data.txt")

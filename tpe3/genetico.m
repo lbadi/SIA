@@ -124,7 +124,7 @@ function ret = genetico()
 	printf("La razon para terminar : %s \n", reasonToEnd);
 	% system('beep');
 	ret = betterElement;
-	ret.fitnessThroughIterations=fitnessThroughIterations;
+	% ret.fitnessThroughIterations=fitnessThroughIterations;
 	ret.totalFitness =  totalFitness;
 	ret.iterations = i-1;
 	ret.reason = reasonToEnd;
