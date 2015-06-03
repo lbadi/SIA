@@ -1,0 +1,18 @@
+#Resultados luego de correr el algoritmo 1500 generaciones con mutacion lineal
+fun=mutateLineal,mutateProbability=0.000000,mutateStrength=0.000000,Fitness=76.127990,TotalFitness=1503.702569,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.050000,mutateStrength=0.100000,Fitness=116.123618,TotalFitness=2076.353502,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.050000,mutateStrength=0.200000,Fitness=102.557137,TotalFitness=1339.994936,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.050000,mutateStrength=0.300000,Fitness=113.456938,TotalFitness=2027.525095,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.050000,mutateStrength=0.400000,Fitness=131.103116,TotalFitness=2392.630477,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.100000,mutateStrength=0.100000,Fitness=114.547201,TotalFitness=2105.789066,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.100000,mutateStrength=0.200000,Fitness=139.872609,TotalFitness=2483.319010,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.100000,mutateStrength=0.300000,Fitness=207.780411,TotalFitness=3033.585970,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.100000,mutateStrength=0.400000,Fitness=144.449257,TotalFitness=2010.320735,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.150000,mutateStrength=0.100000,Fitness=115.559786,TotalFitness=2130.343089,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.150000,mutateStrength=0.200000,Fitness=142.451716,TotalFitness=2624.302497,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.150000,mutateStrength=0.300000,Fitness=145.897794,TotalFitness=2695.356772,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.150000,mutateStrength=0.400000,Fitness=133.394994,TotalFitness=2030.287595,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.200000,mutateStrength=0.100000,Fitness=69.402744,TotalFitness=1046.861133,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.200000,mutateStrength=0.200000,Fitness=157.390681,TotalFitness=2472.358370,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.200000,mutateStrength=0.300000,Fitness=159.841416,TotalFitness=2655.757830,reason=Maxima cantidad de generaciones alcanzadas.
+fun=mutateLineal,mutateProbability=0.200000,mutateStrength=0.400000,Fitness=127.419872,TotalFitness=2101.550590,reason=Maxima cantidad de generaciones alcanzadas.

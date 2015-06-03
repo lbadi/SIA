@@ -1,5 +1,7 @@
 Readme Configuraciones
 ---------------------------------
+En el archivo definitions.m se pueden encontrar las definiciones de las funciones a utilizar.
+
 ----------------------
 genetico.cfg
 
@@ -11,6 +13,8 @@ fitnessWish: El fitness que se desea alcanzar para el corte.
 timeToMakeProgress: Tiempo que tiene para mostrar algun progreso en el mejor fitness
 relevantpercent: Porcentaje de la población que se considera relevante para la validación de corte por estructura.
 structuraliterationsallowed: Iteraciones permitidas antes de que se llegue al corte por estructura.
+usePredetPoblation: Flag para determinar si se desea utilizar la población de testing.
+printDetails: Flag para determinar si se desea imprimir detalles en las iteraciones.
 
 ----------------------
 ----------------------
@@ -52,7 +56,7 @@ mutation.cfg
 mutation: Método de mutación a utilizar (mutateLineal,mutateNoLineal).
 mutateProbability: Probabilidad de mutación.
 mutateStrength: Fuerza de mutación.
-b: Parámetro beta para la función de mutación no lineal.
+
 
 ----------------------
 ----------------------
@@ -60,7 +64,6 @@ selection.cfg
 
 selectMethod: Método de selección a utilizar (torneos,elite,ruleta,boltzmann,universal,eliteruleta,eliteuniversal).
 T:?
-bm:?
 N1:?
 tm:?
 

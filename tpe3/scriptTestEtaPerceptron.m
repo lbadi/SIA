@@ -1,4 +1,4 @@
-function graphEtaTest(incstart,incend,incstep,decstart,decend,decstep,filename)
+function scriptTestEtaPerceptron(incstart,incend,incstep,decstart,decend,decstep,filename)
 % graphEtaTest(0.01,0.1,0.01,0.05,0.2,0.05,'etaPocasIteraciones')
 	p = loadParameters('mperceptron');
 	neurons = p.hidenN;

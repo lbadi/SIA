@@ -4,7 +4,7 @@
 % k = cantidad de seleccionados.
 % iterations = cantidad de iteraciones.
 function ret = genetico()
-	%Se cargan las configuraciones
+	%Se cargan las configuraciones iniciales.
 	g = loadParameters('genetico');
 	sm = loadParameters('selection');
 	co = loadParameters('crossover');
@@ -12,6 +12,12 @@ function ret = genetico()
 	sr = loadParameters('selection2');
 	r = loadParameters('replace');
 	p = loadParameters('mperceptron');
+	
+	%Estos loadParameters son para los scripts de testing
+	% co = loadParameters('testingUniCross/crossover');
+	% m = loadParameters('testingMutation/mutation');
+	% p = loadParameters('testingEta/mperceptron');
+
 	replaceMethod = r.replaceMethod;
 	iterations = g.iterations;
 	fitnessWish = g.fitnessWish;
@@ -24,18 +30,19 @@ function ret = genetico()
 	sr.poblationSize = g.n;
 	sm.poblationSize = g.n;
 	poblationSize = g.n;
-	rand('seed',314159265359);
+
+	
 	% Elegir una población random
-	if(g.useConfigPoblation)
-		pob = loadParameters('poblation');
-		poblation = pob.poblation;
-	else
-		for i=1:g.n
-			poblation(i).w1 = rand(2,g.hidenN) -0.5;
-			poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
-			poblation(i).eta = p.eta;
-		end
+	if(g.usePredetPoblation)
+		rand('seed',314159265359);
 	end
+
+	for i=1:g.n
+		poblation(i).w1 = rand(2,g.hidenN) -0.5;
+		poblation(i).w2 = rand(g.hidenN+1,1) -0.5;
+		poblation(i).eta = p.eta;
+	end
+	
 	% Calcularle la aptitud a esa población y hacerle backpropagation un poco
 	% Ver de que manera es mas conveniente guardar el fitness
 	poblation = fitness(poblation,p);
@@ -92,24 +99,37 @@ function ret = genetico()
 	 		timeFromLastImprove = 0;
 	 		betterFitnessOfAllGenerations = betterElement.fitness;
 	 	end
-	 	printf("Generacion numero : %d \n" , i);
-	 	totalFitness = totalFit
-	 	betterElementFitness=betterElement.fitness
 
+	 	totalFitness = totalFit;
+	 	betterElementFitness=betterElement.fitness;
 	 	bestElementFitnesses(i) = betterElement.fitness;
 	 	averageFitnesses(i) = totalFit/length(poblation);
-	 	if mod(i, 10) == 0
-	 		plotFitnessEvolution(bestElementFitnesses, averageFitnesses, iterations, i);
-	 		plotComparation(betterElement.w1,betterElement.w2,@activation);
+
+
+	 	if (g.printDetails)
+	 		printf("Generacion numero : %d \n" , i);
+	 		printf("Total Fitness : %f \n" , totalFit);
+		 	if mod(i, 100) == 0
+		 		plotFitnessEvolution(bestElementFitnesses, averageFitnesses, iterations, i);
+		 		plotComparation(betterElement.w1,betterElement.w2,@activation);
+		 		%fitnessThroughIterations(i/100)=betterElementFitness;
+		 	end
 	 	end
+	 		printf("Mejor Fitness : %f \n" , betterElementFitness);
 	 	% Calcualar el maximo de los fitness de la poblacion
 	 	max(cat(1,poblation.fitness));
 	 	i++;
 	 	fflush(stdout);
 	end
 	printf("La razon para terminar : %s \n", reasonToEnd);
-	system('beep');
+	% system('beep');
 	ret = betterElement;
+	% ret.fitnessThroughIterations=fitnessThroughIterations;
+	ret.totalFitness =  totalFitness;
+	ret.iterations = i-1;
+	ret.reason = reasonToEnd;
+	ret.crossover = co.crossOver;
+	ret.mutation = m.mutation;
 
 
 % Representación de un estado con una matriz.
