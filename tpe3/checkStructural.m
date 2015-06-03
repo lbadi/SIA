@@ -1,5 +1,5 @@
 function ret = checkStructural(oldpoblation,poblation,relevantpercent)
-	%Retorna 1 si los individuos que no cambiaron son mas del porcentaje relevante
+	%Retorna 1 si los individuos que no cambiaron su fitness son mas del porcentaje relevante
 	count = 0;
 	size = sum(size(poblation(1).w1))+sum(size(poblation(1).w2));
 	for i=1:length(poblation)
@@ -8,6 +8,6 @@ function ret = checkStructural(oldpoblation,poblation,relevantpercent)
 			count++;
 		end
 	end
-	PoblationChanged = length(poblation)-count
+	PoblationChanged = length(poblation)-count;
 	ret = sum(count)/length(poblation)>relevantpercent;
 end

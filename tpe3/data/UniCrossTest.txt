@@ -1,0 +1,6 @@
+#Resultados para el uniCross, con diferentes valores de unip
+unip=0.300000,Fitness=105.092535,totalFitness=1871.667080,reason=Maxima cantidad de generaciones alcanzadas.
+unip=0.400000,Fitness=107.567320,totalFitness=2010.358781,reason=Maxima cantidad de generaciones alcanzadas.
+unip=0.500000,Fitness=95.958323,totalFitness=1893.347333,reason=Maxima cantidad de generaciones alcanzadas.
+unip=0.600000,Fitness=111.339129,totalFitness=2191.053111,reason=Maxima cantidad de generaciones alcanzadas.
+unip=0.700000,Fitness=104.124820,totalFitness=2026.974727,reason=Maxima cantidad de generaciones alcanzadas.

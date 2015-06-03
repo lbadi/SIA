@@ -1,3 +1,4 @@
+#Primeros resultados de eta con sus parametros para el BackPropagation en 4 epocas.
 eta=0.050000,etainc=0.010000,etadec=0.050000,etaincs=0.000000,etadecs=0.000000,its=4,error=0.774957,
 eta=0.050000,etainc=0.010000,etadec=0.100000,etaincs=0.000000,etadecs=0.000000,its=4,error=0.672441,
 eta=0.050000,etainc=0.010000,etadec=0.150000,etaincs=0.000000,etadecs=0.000000,its=4,error=0.861656,

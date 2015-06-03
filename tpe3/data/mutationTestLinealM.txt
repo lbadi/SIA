@@ -1,0 +1,18 @@
+#Resultados luego de correr el algoritmo 1500 generaciones con mutacion linealmente decreciente
+fun=mutateLinealM,mutateProbability=0.000000,mutateStrength=0.000000,Fitness=76.127990,TotalFitness=1503.702569,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.050000,mutateStrength=0.100000,Fitness=118.672095,TotalFitness=2327.162182,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.050000,mutateStrength=0.200000,Fitness=108.634654,TotalFitness=2076.474825,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.050000,mutateStrength=0.300000,Fitness=118.108488,TotalFitness=2318.098988,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.050000,mutateStrength=0.400000,Fitness=119.976171,TotalFitness=2297.040269,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.100000,mutateStrength=0.100000,Fitness=100.151697,TotalFitness=1969.315599,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.100000,mutateStrength=0.200000,Fitness=120.226385,TotalFitness=2072.153930,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.100000,mutateStrength=0.300000,Fitness=118.874412,TotalFitness=2004.176904,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.100000,mutateStrength=0.400000,Fitness=112.343954,TotalFitness=2240.256921,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.150000,mutateStrength=0.100000,Fitness=106.917376,TotalFitness=1916.921173,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.150000,mutateStrength=0.200000,Fitness=113.494826,TotalFitness=1753.017521,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.150000,mutateStrength=0.300000,Fitness=114.055925,TotalFitness=2249.691928,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.150000,mutateStrength=0.400000,Fitness=109.298712,TotalFitness=1559.121249,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.200000,mutateStrength=0.100000,Fitness=103.956662,TotalFitness=1934.325372,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.200000,mutateStrength=0.200000,Fitness=167.588808,TotalFitness=2502.240710,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.200000,mutateStrength=0.300000,Fitness=134.804620,TotalFitness=2066.435300,reason=MaxGen
+fun=mutateLinealM,mutateProbability=0.200000,mutateStrength=0.400000,Fitness=107.753088,TotalFitness=1645.240071,reason=MaxGen

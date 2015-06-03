@@ -1,0 +1,9 @@
+#Resultados luego de correr el algoritmo 100 generaciones con 1 epoca de backpropagation
+eta=0.050000,Fitness=0.920484,totalFitness=17.889796,iterations=100.000000,iterationsValues=0.903249;0.909114;0.913631;0.913631;0.917859;0.919246;0.919246;0.919246;0.920484;0.920484;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.100000,Fitness=0.904273,totalFitness=16.437173,iterations=100.000000,iterationsValues=0.888936;0.892935;0.900410;0.904273;0.904273;0.904273;0.904273;0.904273;0.904273;0.904273;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.150000,Fitness=0.897804,totalFitness=15.947918,iterations=100.000000,iterationsValues=0.893835;0.893835;0.893835;0.897756;0.897756;0.897756;0.897756;0.897804;0.897804;0.897804;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.200000,Fitness=0.908961,totalFitness=15.003196,iterations=100.000000,iterationsValues=0.854919;0.854919;0.898200;0.898200;0.908961;0.908961;0.908961;0.908961;0.908961;0.908961;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.250000,Fitness=1.064982,totalFitness=16.210176,iterations=100.000000,iterationsValues=0.792666;0.841952;0.845411;0.939377;0.939377;0.939377;1.064982;1.064982;1.064982;1.064982;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.300000,Fitness=0.782925,totalFitness=11.586162,iterations=100.000000,iterationsValues=0.747673;0.747673;0.782925;0.782925;0.782925;0.782925;0.782925;0.782925;0.782925;0.782925;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.350000,Fitness=0.862487,totalFitness=12.571438,iterations=100.000000,iterationsValues=0.329918;0.519451;0.519451;0.525161;0.796349;0.796349;0.862487;0.862487;0.862487;0.862487;,reason=Maxima cantidad de generaciones alcanzadas.
+eta=0.400000,Fitness=1.190232,totalFitness=17.027015,iterations=100.000000,iterationsValues=0.869929;0.869929;1.088682;1.088682;1.088682;1.088682;1.190232;1.190232;1.190232;1.190232;,reason=Maxima cantidad de generaciones alcanzadas.
