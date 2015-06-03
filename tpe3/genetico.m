@@ -122,7 +122,7 @@ function ret = genetico()
 	 	fflush(stdout);
 	end
 	printf("La razon para terminar : %s \n", reasonToEnd);
-	% system('beep');
+	system('beep');
 	ret = betterElement;
 	% ret.fitnessThroughIterations=fitnessThroughIterations;
 	ret.totalFitness =  totalFitness;
