@@ -4,18 +4,20 @@
 % k = cantidad de seleccionados.
 % iterations = cantidad de iteraciones.
 function ret = genetico()
-	%Se cargan las configuraciones
+	%Se cargan las configuraciones iniciales.
 	g = loadParameters('genetico');
 	sm = loadParameters('selection');
 	co = loadParameters('crossover');
-	% co = loadParameters('testingUniCross/crossover');
 	m = loadParameters('mutation');
-	% m = loadParameters('testingMutation/mutation');
 	sr = loadParameters('selection2');
 	r = loadParameters('replace');
-	% p = loadParameters('mperceptron');
-	p = loadParameters('testingEta/mperceptron');
+	p = loadParameters('mperceptron');
 	
+	%Estos loadParameters son para los scripts de testing
+	% co = loadParameters('testingUniCross/crossover');
+	% m = loadParameters('testingMutation/mutation');
+	% p = loadParameters('testingEta/mperceptron');
+
 	replaceMethod = r.replaceMethod;
 	iterations = g.iterations;
 	fitnessWish = g.fitnessWish;
