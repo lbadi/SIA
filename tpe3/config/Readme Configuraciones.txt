@@ -1,5 +1,7 @@
 Readme Configuraciones
 ---------------------------------
+En el archivo definitions.m se pueden encontrar las definiciones de las funciones a utilizar.
+
 ----------------------
 genetico.cfg
 
