@@ -1,7 +1,9 @@
 #Algoritmo genetico y red neuronal
 ##Trabajo Practico Sistemas de inteligencia artificial
 ##Autores:
-###Badi Leonel, Lucas Farre, Jorge Gomez.
+###Badi Leonel
+###Lucas Farre
+###Jorge Gomez
 
 Ejecución del algoritmo
 
